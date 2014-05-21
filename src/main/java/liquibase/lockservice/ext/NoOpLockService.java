@@ -67,4 +67,14 @@ public class NoOpLockService implements LockService {
     public void reset() {
 
     }
+
+    @Override
+    public void init() throws DatabaseException {
+
+    }
+
+    @Override
+    public void destroy() throws DatabaseException {
+
+    }
 }
