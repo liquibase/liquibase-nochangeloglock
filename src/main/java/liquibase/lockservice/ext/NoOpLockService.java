@@ -15,7 +15,7 @@ public class NoOpLockService implements LockService {
 
     @Override
     public boolean supports(Database database) {
-        return Config.getInstance().isEnabled();
+        return NoChangelogLockConfiguration.ENABLED.getCurrentValue();
     }
 
     @Override
