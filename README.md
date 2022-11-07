@@ -7,13 +7,11 @@ That means no:
 * Creation of the databasechangeloglock table
 * "update databasechangeloglock set locked=1" calls on run
 
-You can disable the extension logic by setting the system parameter "liquibase.ext.nochangeloglock.enabled" to "false"
+Generally you want to have the databasechangeloglock logic. But especially in scenarios like cloud-managed infrastructure like kubernetes where there is already infrastructure ensuring only one Liquibase process is running at a time, it can be unneeded. 
 
-**WARNING: THIS FUNCTIONALITY IS NOT WHAT YOU NORMALLY WANT!**
+You can disable the extension logic by setting the Liquibase configuration "liquibase.databaseChangelogLockEnabled" to "false" via arguments, properties file, CLI, etc. The default is still "true" even with this plugin enabled.
 
-_It can be helpful in certain circumstance, so use at your own risk_
-
-To use the extension, simply add the liquibase-nochangeloglock.jar file to your classpath.
+To use the extension, add the liquibase-nochangeloglock.jar file to your LIQUIBASE_HOME/lib directory, or your applications's classpath.
 
 Download the liquibase-nochangeloglock.jar file from:
 
