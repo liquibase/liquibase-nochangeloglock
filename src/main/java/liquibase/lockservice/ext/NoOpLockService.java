@@ -15,7 +15,11 @@ public class NoOpLockService implements LockService {
 
     @Override
     public boolean supports(Database database) {
-        return NoChangelogLockConfiguration.ENABLED.getCurrentValue();
+        String oldProperty = System.getProperty("liquibase.ext.nochangeloglock.enabled");
+        if (oldProperty != null) {
+            return Boolean.parseBoolean(oldProperty);
+        }
+        return !NoChangelogLockConfiguration.TABLE_ENABLED.getCurrentValue();
     }
 
     @Override

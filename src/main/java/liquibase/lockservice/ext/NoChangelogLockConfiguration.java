@@ -5,16 +5,15 @@ import liquibase.configuration.ConfigurationDefinition;
 
 public class NoChangelogLockConfiguration implements AutoloadedConfigurations {
 
-    public static final ConfigurationDefinition<Boolean> ENABLED;
+    public static final ConfigurationDefinition<Boolean> TABLE_ENABLED;
 
 
     static {
         ConfigurationDefinition.Builder builder = new ConfigurationDefinition.Builder("liquibase");
 
-        ENABLED = builder.define("databaseChangelogLockEnabled", Boolean.class)
-                .addAliasKey("liquibase.ext.nochangeloglock.enabled")
+        TABLE_ENABLED = builder.define("databaseChangelogLockEnabled", Boolean.class)
                 .setDescription("If false, disable the use of the databasechangelog lock logic")
-                .setDefaultValue(true)
+                .setDefaultValue(false)
                 .build();
     }
 }
