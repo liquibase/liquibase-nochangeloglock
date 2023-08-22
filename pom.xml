@@ -60,6 +60,7 @@
         <sonar.scm.provider>git</sonar.scm.provider>
         <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
         <jacoco.fileset.directory>target</jacoco.fileset.directory>
+        <copy-rename-maven-plugin.version>1.0.1</copy-rename-maven-plugin.version>
     </properties>
 
     <dependencies>
