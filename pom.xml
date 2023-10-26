@@ -22,4 +22,11 @@
         <liquibase.version>4.24.0</liquibase.version>
     </properties>
 
+    <scm>
+        <connection>scm:git:${project.scm.url}</connection>
+        <developerConnection>scm:git:${project.scm.url}</developerConnection>
+		<url>https://github.com/liquibase/liquibase-nochangeloglock.git</url>
+		<tag>HEAD</tag>
+	</scm>
+
 </project>
