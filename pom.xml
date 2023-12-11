@@ -8,7 +8,7 @@
         <version>0.3.2</version> <!-- Replace with the desired version -->
     </parent>
 
-    <groupIdg>org.liquibase.ext</groupId>
+    <groupId>org.liquibase.ext</groupId>
     <artifactId>liquibase-nochangeloglock</artifactId>
     <version>4.26.0-SNAPSHOT</version>
 
