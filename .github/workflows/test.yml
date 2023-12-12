@@ -13,6 +13,6 @@ permissions:
   pull-requests: write
 
 jobs:
-  build:
-    uses: liquibase/build-logic/.github/workflows/os-extension-test.yml@v0.5.6
+  build-test:
+    uses: liquibase/build-logic/.github/workflows/os-extension-test.yml@v0.5.7
     secrets: inherit
