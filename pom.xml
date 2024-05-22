@@ -19,7 +19,7 @@
     <url>https://github.com/liquibase/liquibase-nochangeloglock</url>
 
     <properties>
-        <liquibase.version>4.27.0</liquibase.version>
+        <liquibase.version>4.28.0</liquibase.version>
     </properties>
 
     <dependencies>
