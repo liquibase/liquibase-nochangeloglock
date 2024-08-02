@@ -10,7 +10,7 @@
 
     <groupId>org.liquibase.ext</groupId>
     <artifactId>liquibase-nochangeloglock</artifactId>
-    <version>4.30.0-SNAPSHOT</version>
+    <version>4.30.1-SNAPSHOT</version>
 
     <name>Liquibase Extension Disable DatabaseChangeLogLock usage</name>
     <description>Disables locking logic Liquibase uses to ensure only one instance is running against a database at one
