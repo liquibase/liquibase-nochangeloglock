@@ -1,6 +1,5 @@
-package liquibase.locksevice.ext;
+package liquibase.lockservice.ext;
 
-import liquibase.lockservice.ext.NoOpLockService;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
