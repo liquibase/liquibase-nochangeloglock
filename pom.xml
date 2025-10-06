@@ -20,7 +20,7 @@
 
     <properties>
         <liquibase.version>5.0.1</liquibase.version>
-        <junit.version>5.11.3</junit.version>
+        <junit.version>6.0.0</junit.version>
         <junit-platform.version>1.11.3</junit-platform.version>
     </properties>
 
