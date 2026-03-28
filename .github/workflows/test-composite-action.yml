@@ -16,6 +16,8 @@ jobs:
   test-publish:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v6
+
       - name: Configure AWS credentials for vault access
         uses: aws-actions/configure-aws-credentials@v5
         with:
@@ -64,6 +66,7 @@ jobs:
           sonatype-token: ${{ env.SONATYPE_TOKEN }}
 
       - name: Show deployment result
+        if: always()
         run: |
           echo "Deployment ID: ${{ steps.publish.outputs.deployment-id }}"
           echo "Visit https://central.sonatype.com/publishing/deployments to review"
