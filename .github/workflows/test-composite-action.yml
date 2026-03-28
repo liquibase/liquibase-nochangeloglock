@@ -9,7 +9,7 @@ on:
         default: 'v5.1.0'
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 jobs:
@@ -45,19 +45,25 @@ jobs:
           distribution: 'temurin'
 
       - name: Download Release Artifacts
-        uses: robinraju/release-downloader@daf26c55d821e836577a15f77d86ddc078948b05
-        with:
-          tag: ${{ inputs.tag }}
-          fileName: "*.jar *.pom *.asc"
-          out-file-path: artifacts
-
-      - name: List downloaded artifacts
-        run: ls -la artifacts/
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          mkdir -p artifacts
+          gh release download "$TAG" --dir artifacts --pattern "*.jar" --pattern "*.pom" --pattern "*.asc"
+          echo "Downloaded artifacts:"
+          ls -la artifacts/
 
       - name: Publish to Central Portal
         uses: ./build-logic/.github/actions/publish-to-central-portal
+        id: publish
         with:
           artifacts-dir: artifacts
           version: ${{ inputs.tag }}
           sonatype-username: ${{ env.SONATYPE_USERNAME }}
           sonatype-token: ${{ env.SONATYPE_TOKEN }}
+
+      - name: Show deployment result
+        run: |
+          echo "Deployment ID: ${{ steps.publish.outputs.deployment-id }}"
+          echo "Visit https://central.sonatype.com/publishing/deployments to review"
