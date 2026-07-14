@@ -20,8 +20,8 @@
 
     <properties>
         <liquibase.version>5.0.3</liquibase.version>
-        <junit.version>5.11.3</junit.version>
-        <junit-platform.version>1.11.3</junit-platform.version>
+        <!-- JUnit 6+ aligns all modules (jupiter, vintage, platform) under one version. -->
+        <junit.version>6.1.2</junit.version>
     </properties>
 
     <dependencies>
@@ -46,13 +46,13 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
-            <version>${junit-platform.version}</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-launcher</artifactId>
-            <version>${junit-platform.version}</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
