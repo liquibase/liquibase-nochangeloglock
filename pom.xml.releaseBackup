@@ -10,7 +10,7 @@
 
     <groupId>org.liquibase.ext</groupId>
     <artifactId>liquibase-nochangeloglock</artifactId>
-    <version>5.0.3-SNAPSHOT</version>
+    <version>5.0.4-SNAPSHOT</version>
 
     <name>Liquibase Extension Disable DatabaseChangeLogLock usage</name>
     <description>Disables locking logic Liquibase uses to ensure only one instance is running against a database at one
@@ -19,9 +19,9 @@
     <url>https://github.com/liquibase/liquibase-nochangeloglock</url>
 
     <properties>
-        <liquibase.version>5.0.3</liquibase.version>
-        <junit.version>5.11.3</junit.version>
-        <junit-platform.version>1.11.3</junit-platform.version>
+        <liquibase.version>5.0.4</liquibase.version>
+        <!-- JUnit 6+ aligns all modules (jupiter, vintage, platform) under one version. -->
+        <junit.version>6.1.3</junit.version>
     </properties>
 
     <dependencies>
@@ -46,13 +46,13 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
-            <version>${junit-platform.version}</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-launcher</artifactId>
-            <version>${junit-platform.version}</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
